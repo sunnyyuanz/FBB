@@ -211,7 +211,10 @@ footer {
   ol li {
     padding: 0.3rem 0.8rem;
   }
-
+  .item div {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
   .sticky-header {
     right: 30px;
   }

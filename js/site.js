@@ -53,8 +53,6 @@ const scenario2 = [
 ];
 const carts = document.querySelector('.switch_scenario');
 function init(scenario) {
-  //initialize few main variables
-
   let items = document.querySelector('.items');
   let orderTotal_container = document.getElementById('order_total');
   let orderTotal = 0;
@@ -72,7 +70,6 @@ function init(scenario) {
   //rendering the order total
   priceRendering();
 
-  // calculate out the unit total price by checking if their quantity meet the discount standard first
   function calculateUnitTotal(item) {
     let set;
     let priceAfterDiscount;
@@ -104,14 +101,13 @@ function init(scenario) {
     }
   }
 
-  // creating a list item for each item
   function productsRendering(item) {
     const itemContainer = document.createElement('li');
     itemContainer.classList.add('item');
     const infoContainer = document.createElement('div');
     const imageName = item.name.split(' ').join('-').toLowerCase();
     const imageHtml = `<img src="./images/${imageName}.jpg" alt="${imageName}">`;
-    const textHtml = `<div>${item.name}<br>Qty: ${item.quantity}<br>$${item.unit_price}</div>`;
+    const textHtml = `<div>${item.name}<br>Qty: ${item.quantity}<br>$${item.unit_price}<hr><br>Total Price:$${item.total_price}</div>`;
     if (item.discount) {
       const discountHtml = `<div class="discount">${item.discount}</div>`;
       infoContainer.innerHTML = textHtml + discountHtml;
