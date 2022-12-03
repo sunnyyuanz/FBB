@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/site.css" />
+    <title>SunnyZ | Order Review</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-section">
+        <img src="images/logo.PNG" alt="logo" class="logo" />
+        <a href="index.html" role="heading"> <h1>SUNNYYZ</h1> </a>
+      </div>
+
+      <ol role="progressbar" class="progress-bar">
+        <li role="presentation" class="step1">Shipping</li>
+        <span class="arrow">>>>></span>
+        <li role="presentation" class="step2">Billing</li>
+        <span class="arrow">>>>></span>
+        <li role="presentation" class="step3 current">Review</li>
+      </ol>
+    </header>
+    <main role="main" class="order-details">
+      <section class="shipping-billing-details">
+        <h2>Order Review</h2>
+        <section class="shipping-details">
+          <h3>Shipping Details</h3>
+          <div class="address">
+            <p>Free Standard Shipping</p>
+            <div>
+              <h4>Shipping To:</h4>
+              Sunny Zhu<br />
+              123 Apple St<br />
+              New York, NY 12345<br />
+            </div>
+          </div>
+        </section>
+        <section class="billing-details">
+          <h3>Payment</h3>
+          <div class="payment-details">
+            <p>Visa xxx8765<br />exp. 11/28</p>
+            <div>
+              <h4>Billing To:</h4>
+              Sunny Zhu<br />
+              123 Kiwi St<br />
+              New York, NY 12435<br />
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="order_total-product_details">
+        <div class="switch_scenario">
+          <button class="carts cart1">Cart1</button>
+          <button class="carts cart2">Cart2</button>
+        </div>
+
+        <section class="price_details">
+          <span>Order Total:</span> <span id="order_total"></span>
+          <button class="place_order">Place Order</button>
+        </section>
+        <section class="item-summary">
+          <h3>Item Summary</h3>
+          <ul class="items"></ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>@2022.SunnyYZ | Terms & Conditions and Privacy Policy</p>
+    </footer>
+    <script src="./js/site.js"></script>
+    <script>
+      //below code is controlling the progress-bar header, please see above site.js for more dynamic code.
+      window.addEventListener('scroll', function () {
+        let progressBar = document.querySelector('.progress-bar');
+        if (window.scrollY > 0) {
+          progressBar.classList.add('sticky-header');
+        } else {
+          progressBar.classList.remove('sticky-header');
+        }
+      });
+    </script>
+  </body>
+</html>
